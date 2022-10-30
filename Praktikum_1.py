@@ -1,3 +1,6 @@
+import random
+
+
 # Aufgabe 1
 def gcd(a, b):
     while True:
@@ -30,7 +33,16 @@ def gcd_anz_mod(a, b):
     return anz
 
 
-# def gcd_avg_anz_mod(anz, n):
+def gcd_avg_anz_mod(anz, n):
+    counter, summe_anz_mod = 0, 0
+    a, b = 0, 0
+    while counter <= anz:
+        a = random.randint(0, n - 1)
+        b = random.randint(0, n - 1)
+        anz_modulo = gcd_anz_mod(a, b)
+        summe_anz_mod += anz_modulo
+        counter += 1
+    return summe_anz_mod / anz
 
 
 # Aufgabe 5
@@ -73,4 +85,5 @@ def erw_euklid(c, d, m):
 
 
 if __name__ == "__main__":
-    print(erw_euklid(6, 3, 18))
+    print(gcd_avg_anz_mod(1000, 1000000))
+    print(11.239 - 9.174)
