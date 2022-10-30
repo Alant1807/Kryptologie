@@ -35,7 +35,6 @@ def gcd_anz_mod(a, b):
 
 def gcd_avg_anz_mod(anz, n):
     counter, summe_anz_mod = 0, 0
-    a, b = 0, 0
     while counter <= anz:
         a = random.randint(0, n - 1)
         b = random.randint(0, n - 1)
