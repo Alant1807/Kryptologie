@@ -39,6 +39,8 @@ def gcd_avg_anz_mod(anz, n):
     while counter <= anz:
         a = random.randint(0, n - 1)
         b = random.randint(0, n - 1)
+        if a == 0 and b == 0:
+            return 'nicht gültig'
         anz_modulo = gcd_anz_mod(a, b)
         summe_anz_mod += anz_modulo
         counter += 1
@@ -85,4 +87,5 @@ def erw_euklid(c, d, m):
 
 
 if __name__ == "__main__":
-    print(gcd_avg_anz_mod(10000000, 1000000) - gcd_avg_anz_mod(1000000, 100000))
+    print(gcd_avg_anz_mod(1000000,100000))
+
