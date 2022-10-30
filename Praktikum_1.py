@@ -33,6 +33,7 @@ def gcd_anz_mod(a, b):
     return anz
 
 
+# Aufgabe 3
 def gcd_avg_anz_mod(anz, n):
     counter, summe_anz_mod = 0, 0
     while counter <= anz:
@@ -84,5 +85,4 @@ def erw_euklid(c, d, m):
 
 
 if __name__ == "__main__":
-    print(gcd_avg_anz_mod(1000, 1000000))
-    print(11.239 - 9.174)
+    print(gcd_avg_anz_mod(10000000, 1000000) - gcd_avg_anz_mod(1000000, 100000))
