@@ -50,7 +50,7 @@ def gcd_avg_anz_mod(anz, n):
 # Aufgabe 5
 def erw_euklid(c, d, m):
     g = gcd(c, m)  # Berechne g := gcd(c, m) (Euklidischer Algorithmus)
-    if (d % g) != 0:  # Falls g!|d: keine Lösung - Ende
+    if (d % g) != 0:  # Falls g nicht d teilt: keine Lösung - Ende
         return -1
     else:
         rk, xk, yk = 0, 0, 0  # Initilasierung
