@@ -48,7 +48,7 @@ def gcd_avg_anz_mod(anz, n):
 
 
 # Aufgabe 5
-def erw_euklid(c, d, m):
+def erw_euklid(c, d, m):  # Testziel: lösen von ax + by = gcd(a,b)
     g = gcd(c, m)  # Berechne g := gcd(c, m) (Euklidischer Algorithmus)
     if (d % g) != 0:  # Falls g nicht d teilt: keine Lösung - Ende
         return -1
@@ -99,3 +99,12 @@ if __name__ == "__main__":
     print(erw_euklid(19, 14, 61))
     print(erw_euklid(6, 3, 15))
     print(erw_euklid(6, 3, 18))
+# print(gcd_avg_anz_mod(10000,10000))
+# print(gcd_avg_anz_mod(10000,100000))
+# print(gcd_avg_anz_mod(10000,1000000))
+# print(gcd_avg_anz_mod(10000,10000000))
+# print(gcd_avg_anz_mod(10000,100000000))
+# print(gcd_avg_anz_mod(10000,1000000000))
+# print(gcd_avg_anz_mod(10000,100000)- gcd_avg_anz_mod(10000,10000))
+# print(gcd_avg_anz_mod(10000,10000000)-gcd_avg_anz_mod(10000,1000000))
+# print(gcd_avg_anz_mod(10000,1000000000)-gcd_avg_anz_mod(10000,100000000))
