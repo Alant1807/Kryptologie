@@ -38,36 +38,36 @@ def erw_euklid(c, d, m):  # Testziel: lösen von ax + by = gcd(a,b)
     g = gcd(c, m)  # Berechne g := gcd(c, m) (Euklidischer Algorithmus)
     if (d % g) != 0:  # Falls g nicht d teilt: keine Lösung - Ende
         return -1
-    else:
-        rk, xk, yk = 0, 0, 0  # Initilasierung
-        r0, r1 = c, m
-        x0, x1 = 1, 0
-        y0, y1 = 0, 1
-        if r0 < r1:  # größere Zahl soll oben stehen
-            r0, r1 = r1, r0
-        while True:  # Erweiterter euklidischer Algorithmus
-            rk = r0 % r1  # berechne rk
-            qk = r0 // r1  # berechne qk
-            if c < m:
-                yk = y0 - (y1 * qk)  # berechne yk
-            elif c > m:
-                xk = x0 - (x1 * qk)  # berechne xk
-            if rk != 0:
-                r0, r1 = r1, rk
-                if c < m:
-                    y0, y1 = y1, yk
-                elif c > m:
-                    x0, x1 = x1, xk
-            if rk == 0:  # stopp, wenn gcd = 0 ist
-                break
+    rk, xk, yk = 0, 0, 0  # Initilasierung
+    r0, r1 = c, m
+    x0, x1 = 1, 0
+    y0, y1 = 0, 1
+    if r0 < r1:  # größere Zahl soll oben stehen
+        r0, r1 = r1, r0
+    while True:  # Erweiterter euklidischer Algorithmus
+        rk = r0 % r1  # berechne rk
+        qk = r0 // r1  # berechne qk
         if c < m:
-            y = d // g * y1  # berchne y~
-            y = y % m
-            return y
+            yk = y0 - (y1 * qk)  # berechne yk
         elif c > m:
-            x = d // g * x1  # berechne x~
-            x = x % m
-            return x
+            xk = x0 - (x1 * qk)  # berechne xk
+        if rk != 0:
+            r0, r1 = r1, rk
+            if c < m:
+                y0, y1 = y1, yk
+            elif c > m:
+                x0, x1 = x1, xk
+        if rk == 0:  # stopp, wenn gcd = 0 ist
+            break
+    if c < m:
+        y = d // g * y1  # berchne y~
+        y = y % m
+        return y
+    elif c > m:
+        x = d // g * x1  # berechne x~
+        x = x % m
+        return x
+
 
 
 if __name__ == "__main__":
