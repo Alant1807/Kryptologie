@@ -3,34 +3,20 @@ import random
 
 # Aufgabe 1
 def gcd(a, b):
-    while True:
-        if a < b:  # größere Zahl soll oben stehen
-            a, b = b, a
-        if b == 0:  # tausche a, b damit 0 % a gilt
-            a, b = b, a
+    while b != 0:
         tmp = a % b
-        if tmp != 0:
-            a, b = b, tmp
-        if tmp == 0:  # stopp, wenn gcd = 0 ist
-            break
-    return b
+        a, b = b, tmp
+    return a
 
 
 # Aufgabe 2
 def gcd_anz_mod(a, b):
     anz = 0
-    while True:
-        if a < b:  # größere Zahl soll oben stehen
-            a, b = b, a
-        if b == 0:  # tausche a, b damit 0 % a gilt
-            a, b = b, a
+    while b != 0:
         tmp = a % b
         anz += 1
-        if tmp != 0:
-            a, b = b, tmp
-        if tmp == 0:  # stopp, wenn gcd = 0 ist
-            break
-    return anz
+        a, b = b, tmp
+    return a
 
 
 # Aufgabe 3
@@ -76,17 +62,11 @@ def erw_euklid(c, d, m):  # Testziel: lösen von ax + by = gcd(a,b)
                 break
         if c < m:
             y = d // g * y1  # berchne y~
-            while y < 0:
-                y = y % m
-            while y > m:
-                y = y % m
+            y = y % m
             return y
         elif c > m:
             x = d // g * x1  # berechne x~
-            while x < 0:
-                x = x % m
-            while x > m:
-                x = x % m
+            x = x % m
             return x
 
 
@@ -97,8 +77,10 @@ if __name__ == "__main__":
     print(gcd_anz_mod(9 ** 100 + 1, 10 ** 100 + 1))
     print()
     print(erw_euklid(19, 14, 61))
+    print(erw_euklid(86, 13, 61))
     print(erw_euklid(6, 3, 15))
     print(erw_euklid(6, 3, 18))
+    print(erw_euklid(9 ** 100 + 1, 8 ** 100 + 1, 10 ** 100 + 1))
 # print(gcd_avg_anz_mod(10000,10000))
 # print(gcd_avg_anz_mod(10000,100000))
 # print(gcd_avg_anz_mod(10000,1000000))
