@@ -16,20 +16,19 @@ def gcd_anz_mod(a, b):
         tmp = a % b
         anz += 1
         a, b = b, tmp
-    return a
+    return anz
 
 
 # Aufgabe 3
 def gcd_avg_anz_mod(anz, n):
-    counter, summe_anz_modulo = 0, 0
-    while counter <= anz:
+    summe_anz_modulo = 0
+    for counter in range(anz + 1):
         a = random.randint(0, n - 1)  # generiere ein zufälliges 0 <= a < n
         b = random.randint(0, n - 1)  # generiere ein zufälliges 0 <= b < n
         if a == 0 and b == 0:
             return 'nicht gültig'
         anz_modulo = gcd_anz_mod(a, b)  # berechne anzahl an Modulo-Berechnungen
         summe_anz_modulo += anz_modulo
-        counter += 1
     return summe_anz_modulo / anz
 
 
@@ -70,22 +69,22 @@ def erw_euklid(c, d, m):  # Testziel: lösen von ax + by = gcd(a,b)
 
 
 if __name__ == "__main__":
-    print(gcd(282, 240))
-    print(gcd(9 ** 100 + 1, 10 ** 100 + 1))
-    print()
-    print(gcd_anz_mod(9 ** 100 + 1, 10 ** 100 + 1))
-    print()
-    print(erw_euklid(19, 14, 61))
-    print(erw_euklid(86, 13, 61))
-    print(erw_euklid(6, 3, 15))
-    print(erw_euklid(6, 3, 18))
-    print(erw_euklid(9 ** 100 + 1, 8 ** 100 + 1, 10 ** 100 + 1))
-# print(gcd_avg_anz_mod(10000,10000))
-# print(gcd_avg_anz_mod(10000,100000))
-# print(gcd_avg_anz_mod(10000,1000000))
-# print(gcd_avg_anz_mod(10000,10000000))
-# print(gcd_avg_anz_mod(10000,100000000))
-# print(gcd_avg_anz_mod(10000,1000000000))
-# print(gcd_avg_anz_mod(10000,100000)- gcd_avg_anz_mod(10000,10000))
+    # print(gcd(282, 240))
+    # print(gcd(9 ** 100 + 1, 10 ** 100 + 1))
+    # print()
+    # print(gcd_anz_mod(9 ** 100 + 1, 10 ** 100 + 1))
+    # print()
+    # print(erw_euklid(19, 14, 61))
+    # print(erw_euklid(86, 13, 61))
+    # print(erw_euklid(6, 3, 15))
+    # print(erw_euklid(6, 3, 18))
+    # print(erw_euklid(9 ** 100 + 1, 8 ** 100 + 1, 10 ** 100 + 1))
+    print(gcd_avg_anz_mod(10000, 10000))
+    print(gcd_avg_anz_mod(10000, 100000))
+    print(gcd_avg_anz_mod(10000, 1000000))
+    print(gcd_avg_anz_mod(10000, 10000000))
+    print(gcd_avg_anz_mod(10000, 100000000))
+    print(gcd_avg_anz_mod(10000, 1000000000))
+# print(gcd_avg_anz_mod(10000, 100000) - gcd_avg_anz_mod(10000, 10000))
 # print(gcd_avg_anz_mod(10000,10000000)-gcd_avg_anz_mod(10000,1000000))
 # print(gcd_avg_anz_mod(10000,1000000000)-gcd_avg_anz_mod(10000,100000000))
