@@ -21,4 +21,4 @@ def find_Primzahl(n, it):
 
 
 if __name__ == "__main__":
-    print(find_Primzahl(10**8, 10))
+    print(find_Primzahl(10**100, 10))
