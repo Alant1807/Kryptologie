@@ -20,5 +20,13 @@ def find_Primzahl(n, it):
     return n
 
 
+def anzahl_zeugen(n):
+    counter = 0
+    for it in range(1, n):
+        if miller_rabin_test(n, it) == 1:
+            counter += 1
+    return counter
+
+
 if __name__ == "__main__":
-    print(find_Primzahl(10**100, 10))
+    print(anzahl_zeugen(9))
