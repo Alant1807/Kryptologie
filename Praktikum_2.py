@@ -4,7 +4,7 @@ import random
 def miller_rabin_test(n, it):
     k = n - 1
     while True:
-        tmp = it ** k % n
+        tmp = pow(it, k, n)
         if tmp != 1 and tmp != (n - 1):
             return 1
         elif tmp == (n - 1) or k % 2 != 0:
@@ -28,5 +28,15 @@ def anzahl_zeugen(n):
     return counter
 
 
+def avg_distance_Prim(anz, n, it):
+    summe_differenz = 0
+    for counter in range(anz + 1):
+        m = random.randint(0, n)
+        pm = find_Primzahl(m, it)
+        differenz = pm - m
+        summe_differenz += differenz
+    return summe_differenz / anz
+
+
 if __name__ == "__main__":
-    print(anzahl_zeugen(9))
+    print(avg_distance_Prim(333,100000,100))
