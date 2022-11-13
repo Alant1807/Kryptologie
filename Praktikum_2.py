@@ -39,4 +39,9 @@ def avg_distance_Prim(anz, n, it):
 
 
 if __name__ == "__main__":
-    print(avg_distance_Prim(1000, 1))
+    print(find_Primzahl(17, 5))
+    print(find_Primzahl(32, 5))
+    print(find_Primzahl(10 ** 100, 10))
+    print()
+    print(anzahl_zeugen(9))
+    print(anzahl_zeugen(325))
