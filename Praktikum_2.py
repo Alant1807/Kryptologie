@@ -1,4 +1,5 @@
 import random
+import math
 
 
 def miller_rabin_test(n, it):
@@ -31,7 +32,7 @@ def anzahl_zeugen(n):
 def avg_distance_Prim(anz, n, it):
     summe_differenz = 0
     for counter in range(anz + 1):
-        m = random.randint(1, n - 1)
+        m = random.randint(0, n)
         pm = find_Primzahl(m, it)
         differenz = pm - m
         summe_differenz += differenz
