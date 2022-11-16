@@ -1,16 +1,27 @@
 import random
-import math
+
+
+def teste_Zeuge(n, a):
+    x = pow(a, n - 1, n)
+    if x != 1:
+        return 1
+    k = (n - 1) // 2
+    while True:
+        x = pow(a, k, n)
+        if x != 1 and x != (n - 1):
+            return 1
+        elif x == (n - 1) or k % 2 != 0:
+            return 0
+        k //= 2
 
 
 def miller_rabin_test(n, it):
-    k = n - 1
-    while True:
-        tmp = pow(it, k, n)
-        if tmp != 1 and tmp != (n - 1):
+    for _ in range(it):
+        a = random.randint(2, n - 2)
+        x = teste_Zeuge(n, a)
+        if x == 1:
             return 1
-        elif tmp == (n - 1) or (k % 2 != 0 and tmp == 1 or tmp == (n - 1)):
-            return 0
-        k //= 2
+    return 0
 
 
 def find_Primzahl(n, it):
@@ -23,8 +34,8 @@ def find_Primzahl(n, it):
 
 def anzahl_zeugen(n):
     counter = 0
-    for it in range(1, n):
-        if miller_rabin_test(n, it) == 1:
+    for a in range(1, n):
+        if teste_Zeuge(n, a) == 1:
             counter += 1
     return counter
 
@@ -40,9 +51,8 @@ def avg_distance_Prim(anz, n, it):
 
 
 if __name__ == "__main__":
-    print(find_Primzahl(17, 5))
-    print(find_Primzahl(32, 5))
-    print(find_Primzahl(10 ** 100, 10))
-    print()
+    print(find_Primzahl(17,5))
+    print(find_Primzahl(32,5))
+    print(find_Primzahl(10**100,10))
     print(anzahl_zeugen(9))
     print(anzahl_zeugen(325))
