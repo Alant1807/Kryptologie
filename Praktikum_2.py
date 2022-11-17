@@ -17,9 +17,8 @@ def teste_Zeuge(n, a):
 
 def miller_rabin_test(n, it):
     for _ in range(it):
-        a = random.randint(2, n - 2)
-        x = teste_Zeuge(n, a)
-        if x == 1:
+        a = random.randint(1, n - 1)
+        if teste_Zeuge(n, a):
             return 1
     return 0
 
@@ -51,8 +50,8 @@ def avg_distance_Prim(anz, n, it):
 
 
 if __name__ == "__main__":
-    print(find_Primzahl(17,5))
-    print(find_Primzahl(32,5))
-    print(find_Primzahl(10**100,10))
+    print(find_Primzahl(17, 5))
+    print(find_Primzahl(32, 5))
+    print(find_Primzahl(10 ** 100, 10))
     print(anzahl_zeugen(9))
     print(anzahl_zeugen(325))
