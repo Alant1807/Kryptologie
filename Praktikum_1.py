@@ -69,4 +69,4 @@ def erw_euklid(c, d, m):  # Testziel: lösen von ax + by = gcd(a,b)
 
 
 if __name__ == "__main__":
-    print(9 ** 25 % 15)
+    print()
