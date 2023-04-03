@@ -1,6 +1,5 @@
 import random
 
-
 def teste_Zeuge(n, a):
     x = pow(a, n - 1, n)
     if x != 1:
@@ -47,7 +46,3 @@ def avg_distance_Prim(anz, n, it):
         differenz = pm - m
         summe_differenz += differenz
     return summe_differenz / anz
-
-
-if __name__ == "__main__":
-    print()

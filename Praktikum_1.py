@@ -66,7 +66,3 @@ def erw_euklid(c, d, m):  # Testziel: lösen von ax + by = gcd(a,b)
         x = d // g * x1  # berechne x~
         x = x % m
         return x
-
-
-if __name__ == "__main__":
-    print()

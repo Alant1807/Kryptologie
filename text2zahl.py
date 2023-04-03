@@ -47,8 +47,3 @@ def zahl2text(zahl: int) -> str:
         text.append(buch(wert))
         zahl = zahl // 100
     return "".join(text[::-1])
-
-
-if __name__ == "__main__":
-    txt = "Deutschland hat seinen Start in die WM 2022 verpatzt und mit 1:2 gegen Japan verloren."
-    print(text2zahl(txt))
